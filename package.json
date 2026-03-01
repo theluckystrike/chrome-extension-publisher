@@ -1,0 +1,10 @@
+{
+  "name": "chrome-extension-publisher",
+  "version": "1.0.0",
+  "description": "CLI tool to publish Chrome extensions to Web Store automatically",
+  "bin": {
+    "ext-publish": "./bin/publish.js"
+  },
+  "keywords": ["chrome-extension", "publish", "webstore", "cli", "automation"],
+  "license": "MIT"
+}
