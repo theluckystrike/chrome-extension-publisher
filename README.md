@@ -1,8 +1,15 @@
 # chrome-extension-publisher
 
+[![npm version](https://img.shields.io/npm/v/chrome-extension-publisher)](https://npmjs.com/package/chrome-extension-publisher)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![Discord](https://img.shields.io/badge/Discord-Zovo-blueviolet.svg?logo=discord)](https://discord.gg/zovo)
+[![Website](https://img.shields.io/badge/Website-zovo.one-blue)](https://zovo.one)
+[![GitHub Stars](https://img.shields.io/github/stars/theluckystrike/chrome-extension-publisher?style=social)](https://github.com/theluckystrike/chrome-extension-publisher)
+
 > CLI tool to validate and publish Chrome extensions to the Chrome Web Store.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+Part of the [Zovo](https://zovo.one) developer tools family.
 
 ## Install
 
@@ -113,3 +120,23 @@ ext-publish upload ./extension.zip \
 ## License
 
 MIT
+
+## See Also
+
+- [chrome-extension-cli](https://github.com/theluckystrike/chrome-extension-cli) - The CLI for your next Chrome Extension
+- [chrome-extension-starter-mv3](https://github.com/theluckystrike/chrome-extension-starter-mv3) - Production-ready Chrome Extension starter template
+- [crx-manifest-validator](https://github.com/theluckystrike/crx-manifest-validator) - CLI + library to validate Chrome extension manifest.json files
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+Built by [Zovo](https://zovo.one)
