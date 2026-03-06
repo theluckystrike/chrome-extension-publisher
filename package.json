@@ -6,5 +6,8 @@
     "ext-publish": "./bin/publish.js"
   },
   "keywords": ["chrome-extension", "publish", "webstore", "cli", "automation"],
+  "scripts": {
+    "test": "node bin/publish.js help"
+  },
   "license": "MIT"
 }

@@ -1,87 +1,73 @@
 # chrome-extension-publisher
 
 [![npm version](https://img.shields.io/npm/v/chrome-extension-publisher)](https://npmjs.com/package/chrome-extension-publisher)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
-[![Discord](https://img.shields.io/badge/Discord-Zovo-blueviolet.svg?logo=discord)](https://discord.gg/zovo)
-[![Website](https://img.shields.io/badge/Website-zovo.one-blue)](https://zovo.one)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/theluckystrike/chrome-extension-publisher?style=social)](https://github.com/theluckystrike/chrome-extension-publisher)
 
-> CLI tool to validate and publish Chrome extensions to the Chrome Web Store.
+CLI tool for validating and publishing Chrome extensions to the Chrome Web Store. Provides four commands to validate manifest files, upload zip packages, publish extensions, and check publishing status.
 
 Part of the [Zovo](https://zovo.one) developer tools family.
 
-## Install
+INSTALL
 
 ```bash
 npm install -g chrome-extension-publisher
 ```
 
-Or use locally in a project:
+Or add it to a project as a dev dependency:
 
 ```bash
 npm install --save-dev chrome-extension-publisher
 ```
 
-This installs the `ext-publish` command.
+This makes the `ext-publish` command available.
 
-## Usage
+USAGE
 
 ```bash
 ext-publish <command> [options]
 ```
 
-### Commands
+COMMANDS
 
-#### `validate <dir>` -- Validate an extension before upload
-
-Checks that `manifest.json` exists and contains all required fields (`name`, `version`, `manifest_version`).
+`validate <dir>` validates a Chrome extension directory by checking that `manifest.json` exists and contains the required fields: `name`, `version`, and `manifest_version`.
 
 ```bash
 ext-publish validate ./dist
 
-# Output:
 # Manifest valid
 #    Name: My Extension
 #    Version: 1.2.0
 #    Manifest: v3
 ```
 
-#### `upload <zip>` -- Upload a packaged extension
-
-Upload a `.zip` file to the Chrome Web Store.
+`upload <zip>` uploads a zipped extension package to the Chrome Web Store. Requires OAuth2 credentials.
 
 ```bash
 ext-publish upload ./extension.zip
 ```
 
-#### `publish <zip>` -- Upload and submit for review
-
-Uploads the package and marks it for publishing after review.
+`publish <zip>` uploads the package and submits it for review in a single step.
 
 ```bash
 ext-publish publish ./extension.zip
 ```
 
-#### `status <ext-id>` -- Check publishing status
-
-Query the current status of an extension by its ID.
+`status <ext-id>` checks the current publishing status of an extension by its Web Store ID.
 
 ```bash
 ext-publish status abcdefghijklmnopqrstuvwxyz
 ```
 
-#### `help` -- Show usage information
+`help` prints usage information and available options.
 
 ```bash
 ext-publish help
 ```
 
-## Configuration
+OAUTH2 CREDENTIALS
 
-### OAuth2 Credentials
-
-The `upload` and `publish` commands require Chrome Web Store API credentials. Pass them as CLI flags:
+The `upload` and `publish` commands require Chrome Web Store API credentials passed as CLI flags:
 
 ```bash
 ext-publish upload ./extension.zip \
@@ -90,52 +76,28 @@ ext-publish upload ./extension.zip \
   --refresh-token "your-refresh-token"
 ```
 
-### Getting Credentials
+To obtain credentials:
 
-1. Go to the [Google Cloud Console](https://console.cloud.google.com/)
+1. Open the [Google Cloud Console](https://console.cloud.google.com/)
 2. Create a project and enable the Chrome Web Store API
-3. Create OAuth2 credentials (Desktop application)
+3. Create OAuth2 credentials for a Desktop application
 4. Generate a refresh token using the OAuth2 flow
 
-## API
+CLI OPTIONS
 
-### CLI Options
-
-| Option | Description |
+| Flag | Purpose |
 | --- | --- |
 | `--client-id` | OAuth2 client ID for Chrome Web Store API |
 | `--client-secret` | OAuth2 client secret |
 | `--refresh-token` | OAuth2 refresh token |
 
-### Commands Reference
+CONTRIBUTING
 
-| Command | Arguments | Description |
-| --- | --- | --- |
-| `upload` | `<zip-path>` | Upload extension package to Chrome Web Store |
-| `publish` | `<zip-path>` | Upload and submit for review |
-| `status` | `<extension-id>` | Check publishing status of an extension |
-| `validate` | `<directory>` | Validate manifest.json in the given directory |
-| `help` | -- | Show usage information |
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on reporting issues, development workflow, and submitting pull requests.
 
-## License
+LICENSE
 
-MIT
-
-## See Also
-
-- [chrome-extension-cli](https://github.com/theluckystrike/chrome-extension-cli) - The CLI for your next Chrome Extension
-- [chrome-extension-starter-mv3](https://github.com/theluckystrike/chrome-extension-starter-mv3) - Production-ready Chrome Extension starter template
-- [crx-manifest-validator](https://github.com/theluckystrike/crx-manifest-validator) - CLI + library to validate Chrome extension manifest.json files
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+MIT. See [LICENSE](LICENSE) for the full text.
 
 ---
 
